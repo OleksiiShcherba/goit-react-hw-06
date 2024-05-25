@@ -24,6 +24,7 @@ const Contact = ({ id, name, phone }) => {
 };
 
 Contact.propsTypes = {
+  id: propsTypes.string.isRequired,
   name: propsTypes.string.isRequired,
   phone: propsTypes.string.isRequired,
 };
