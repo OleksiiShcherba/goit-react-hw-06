@@ -1,9 +1,7 @@
-import { nanoid } from "nanoid";
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contactsSlice";
-import propsTypes from "prop-types";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
@@ -58,10 +56,6 @@ const ContactForm = () => {
       </Form>
     </Formik>
   );
-};
-
-ContactForm.propsTypes = {
-  addNewContact: propsTypes.func.isRequired,
 };
 
 export default ContactForm;

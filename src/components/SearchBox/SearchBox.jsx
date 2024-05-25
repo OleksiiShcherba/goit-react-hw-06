@@ -1,7 +1,6 @@
 import { useId } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeFilter, filtersSelector } from "../../redux/filtersSlice";
-import propsTypes from "prop-types";
 import css from "./SearchBox.module.css";
 
 const SearchBox = () => {
@@ -22,11 +21,6 @@ const SearchBox = () => {
       ></input>
     </div>
   );
-};
-
-SearchBox.propsTypes = {
-  searchField: propsTypes.string.isRequired,
-  searchChange: propsTypes.func.isRequired,
 };
 
 export default SearchBox;
