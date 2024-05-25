@@ -1,9 +1,13 @@
 import { useId } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFilter, filtersSelector } from "../../redux/filtersSlice";
 import propsTypes from "prop-types";
 import css from "./SearchBox.module.css";
 
-const SearchBox = ({ searchField, searchChange }) => {
+const SearchBox = () => {
   const searchId = useId();
+  const dispatch = useDispatch();
+  const searchField = useSelector(filtersSelector);
 
   return (
     <div className={css.searchBlock}>
@@ -14,7 +18,7 @@ const SearchBox = ({ searchField, searchChange }) => {
         name="search"
         id={searchId}
         value={searchField}
-        onChange={(event) => searchChange(event.currentTarget.value)}
+        onChange={(event) => dispatch(changeFilter(event.currentTarget.value))}
       ></input>
     </div>
   );
